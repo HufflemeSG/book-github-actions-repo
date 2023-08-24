@@ -9,16 +9,17 @@ on:
   workflow_dispatch:
 jobs:
   build:
-    runs-on: debian-latest
+    runs-on: ubuntu-latest
+    
   steps:
   - uses: actions/checkout@v3
 
   - name: Use Node.js
     uses: actions/setup-node@v3
 
-  run: npm install
+  - run: npm install
 
-  run: gulp build
+  - run: gulp build
 
   - uses: actions/upload-artifact@v3
     with:
